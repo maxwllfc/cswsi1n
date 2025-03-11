@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 05</title>
+</head>
+<body>
+    <h1>Principais formatações</h1>
+
+    <h2>Negrito / Destaque</h2>
+        <p>Na frase temos uma <b>parte do texto</b> em negrito usando a tag B</p>
+        <p>Na frase temos uma <strong>parte do texto</strong> em negrito usando a tag </p>
+
+    <h2>Itálico / Ênfase</h2>
+        <p>Nesta frase, vamos entrar com uma palavra em <i>itálico</i> usando a tag i (não semântica)</p>
+        <p>Nesta frase, vamos entrar com uma palavra em <EM>itálico</EM> usando a tag EM (com semântica)</p>
+
+    <h2>Texto Marcador</h2>
+        <p>Aqui vamos usar um texto com destaque <mark style="background-color: greenyellow;">de marcador de texto</mark> usando mark</p>
+        <p>Aqui vamos usar um texto com destaque <mark>de marcador de texto</mark> usando mark</p>
+   
+    <h2>Texto grande e pequeno</h2>
+        <p>Estamos trabalhando aqui com um <big>texto grande</big> e um <small>texto pequeno</small> nesta frase</p>
+
+    <h2>Texto deletado</h2>
+        <p>Neste parágrafo vamos tabalhar com um texto que <del>foi excluído</del> da frase (forma semântica)</p>
+
+    <h2>Texto inserido</h2>
+        <p>Nesta frase vamos demostrar como destacar <u>um texto inserido</u> na frase de forma semântica</p>
+        <p>Nesta frase vamos demostrar como destacar <ins>um texto inserido</ins> na frase de forma não semântica</p>
+
+    <h2>Texto sobrescrito</h2>
+        <p>Vamos demosntrar uma fórmula da equacção de segundo grau ax<sup>2</sup> + bx + c = 0 usando tag sup</p>
+        
+    <h2>Texto subescrito</h2>
+        <p>vamos demostrar o texto subescrito com a fórmula da água H<sub>2</sub>O</p>
+
+    <h2>Trecho de código fonte</h2>
+        <p>Neste exemplo vou demostrar um trecho de código</p>
+        <p>Inserido o comando <code>document.getEmelentById('edtCodigo')</code> que é um comando java script</p>
+        <p>Inserindo um código em python:</p>
+        <p><pre><code>
+            # Função para remover outliers usando o desvio padrão
+            def remove_outliers(data, threshold=3):
+                # Calcula a média e o desvio padrão dos dados
+                mean = np.mean(data)
+                std_dev = np.std(data)
+                
+                # Identifica os outliers (valores fora do intervalo de [mean - threshold*std, mean + threshold*std])
+                filtered_data = [x for x in data if (mean - threshold * std_dev) <= x <= (mean + threshold * std_dev)]
+                
+                return filtered_data
+            
+            # Exemplo de dados com outliers
+            dados = [10, 12, 15, 16, 100, 17, 18, 14, 13, 11, 120]
+            
+            # Remover outliers
+            dados_sem_outliers = remove_outliers(dados)
+            
+            # Exibe os resultados
+            print("Dados originais:", dados)
+            print("Dados sem outliers:", dados_sem_outliers)</code></pre></p>
+
+    <h2>Citações (quotation) simples</h2>
+            <p>Segundo Steve Jobs <q>A tecnologia move o mundo</q> </p>
+    
+    <h2>Citações completas (livros)</h2>
+        <p>Segundo Sandra Kussunoki no seu livro A dança e o ventre:</p>
+        <p><blockquote>Dados existeates sobre interveações cinúrgicas dos corpos contemporáneos visando à obtenção de um corpo mais prácimo do padrão estético tais como lipoaspiração, próteses de silicone, entre outras, comprovam essa busca obsessiva pelo ideal de perfeição, que é bascado prinepalmente na magreza. </blockquote></p>
+
+    <h2>Abreviações</h2>
+        <p>Estamos estudando <abbr title="HyperText Markup Language">HTML</abbr> e <abbr title="Cascading Styles Sheets">CSS</abbr></p>
+
+    <h2>Texto invertido</h2>
+        <p>Estou estudando HTML.</p>
+        <p><bdo dir=rtl>Estou estudando HTML.</bdo></p>
+</body>
+</html> 
