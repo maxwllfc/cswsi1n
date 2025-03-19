@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Listas com tabelas</h1>
+    <img source="">
+    <div>
+    <h2>NES</h2>
+    <ul>
+        <li>Mario Kart 8 Deluxe (Nintendo Switch)</li>
+        <li>Super Mario Bros. 3</li>
+        <li>Super Mario Bros.: The Lost Levels</li>
+        <li>Pokémon Emerald (Game Boy Advance)</li>
+        <li>Fire Emblem: A wakening (Nintendo DS)</li>
+        <li>Super Mario 64 (Nintendo 64)</li>
+        <li>Super Smash Bros. Ultimate (Nintendo Switch)</li>
+        <li>Metroid Prime (Nintendo GameCube)</li>
+    </ul>
+    </div>
+    <div>
+    <h2>SNES</h2>
+        <ul>
+            <li>Super Mario RPG: Legend of the Seven Stars</li>
+            <li>The Legend of Zelda: A Link to the Past</li>
+            <li>Super Metroid</li>
+            <li>Mega Man X</li>
+            <li>Kirby Super Star</li>
+            <li>Star Fox</li>
+        </ul>
+    </div>
+    <div>
+    <h2>PlayStation (PS1)</h2>
+        <ul>
+            <li>Ridge Racer</li>
+            <li>Tomb Raider</li>
+            <li>Metal Gear Solid</li>
+        </ul>
+    </div>
+        <div>
+    <h2>PlayStation 2 (PS2)</h2>
+        <ul>
+            <li>Grand Theft Auto III</li>
+            <li>Mortal Kombat: Shaolin Monks</li>
+            <li>God of War</li>
+        </ul>
+    </div>
+        <div>
+    <h2>PlayStation 3 (PS3)</h2>
+        <ul>
+            <li>LittleBigPlanet</li>
+            <li>Grand Theft Auto V</li>
+            <li>The Last of Us</li>
+        </ul>
+    </div>
+        <div>
+    <h2>PlayStation 4 (PS4)</h2>
+        <ul>
+            <li>Uncharted 4: A Thief's End</li>
+            <li>Bloodborne</li>
+            <li>God of War</li>
+        </ul>
+    </div>
+        <div>
+    <h2>PlayStation 5 (PS5)</h2>
+        <ul>
+            <li>Marvel's Spider-Man</li>
+            <li>Deamon Souls</li>
+            <li>God of War</li>
+        </ul>
+    </div>
+        <div>
+    <h2>Xbox</h2>
+        <ol type="I">
+            <li>007</li>
+            <li>007: Quantum of Solace</li>
+            <li>2006 FIFA World Cup</li>
+            <li>A Kingdom for Keflings</li>
+        </ol>
+    </div>
+    <div>
+        <table border="1">
+            <tr>
+                <th colspan="8">Meus Jogos Favoritos</th>
+            </tr>
+            <tr>
+                <th>NES</th>
+                <th>SNES</th>
+                <th colspan="1">PlayStation</th>
+                <th>Xbox</th>
+            </tr>
+            <tr>
+                <td>
+                    <ul>
+                        <li>Mario Kart 8 Deluxe (Nintendo Switch)</li>
+                        <li>Super Mario Bros. 3</li>
+                        <li>Super Mario Bros.: The Lost Levels</li>
+                        <li>Pokémon Emerald (Game Boy Advance)</li>
+                        <li>Fire Emblem: A wakening (Nintendo DS)</li>
+                        <li>Super Mario 64 (Nintendo 64)</li>
+                        <li>Super Smash Bros. Ultimate (Nintendo Switch)</li>
+                        <li>Metroid Prime (Nintendo GameCube)</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>Super Mario RPG: Legend of the Seven Stars</li>
+                        <li>The Legend of Zelda: A Link to the Past</li>
+                        <li>Super Metroid</li>
+                        <li>Mega Man X</li>
+                        <li>Kirby Super Star</li>
+                        <li>Star Fox</li>
+                    </ul>
+                </td>
+                <td>
+                    <table border="1">
+                        <tr>
+                            <th>PS1</th>
+                            <th>PS2</th>
+                            <th>PS3</th>
+                            <th>PS4</th>
+                            <th>PS5</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <ul>
+                                    <li>Ridge Racer</li>
+                                    <li>Tomb Raider</li>
+                                    <li>Metal Gear Solid</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>Grand Theft Auto III</li>
+                                    <li>Mortal Kombat: Shaolin Monks</li>
+                                    <li>God of War</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>LittleBigPlanet</li>
+                                    <li>Grand Theft Auto V</li>
+                                    <li>The Last of Us</li> 
+                                </ul>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>Uncharted 4: A Thief's End</li>
+                                    <li>Bloodborne</li>
+                                    <li>God of War</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>Marvel's Spider-Man</li>
+                                    <li>Deamon Souls</li>
+                                    <li>God of War</li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                <td>
+                    <ol type="I">
+                        <li>007</li>
+                        <li>007: Quantum of Solace</li>
+                        <li>2006 FIFA World Cup</li>
+                        <li>A Kingdom for Keflings</li>
+                    </ol>
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
