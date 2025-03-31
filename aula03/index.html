@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./source/favicon.png" type="image/x-icon">
+    <title>Aula 03</title>
+</head>
+<body>
+    <h1>Desafio das imagens</h1>
+    <br>
+    <h2>Foto da cidade de Anor Londo</h2>
+    <img src="./source/anor_londo.png" alt="Anor Londo">
+    <br>
+    <br>
+    <picture>
+        <source media="(max-width:760px)" srcset="./source/anor_londo_ds3.jpg">
+        <source media="(min-width: 768px)" srcset="./source/inside_anor_londo_castle.jpg">
+        <img src="./source/anor_londo_ds3.jpg" alt="Anor Londo no Dark Souls 3">
+    </picture>
+</body>
+</html>
