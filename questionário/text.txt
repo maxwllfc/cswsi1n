@@ -1,0 +1,236 @@
+QUESTIONÁRIO
+
+1) Qual foi o período de histórico da humanidade a internet
+começou e porque?
+
+Foi entre a década de 50 e 60, durante o período da Guerra Fria. A internet começou sendo um meio dos EUA sair na frente, pois ajudava os militares com pesquisas avançadas pela comunicação entre pesquisadores.
+
+
+2) A agência militar americana DARPA foi a responsável pelo início
+dos estudos que deram origem à Internet. Logo no início, a rede
+teve um nome. Qual foi esse nome e quem utiliza a rede?
+
+ARPANET. Eram os militares e os pesquisadores que utilizavam ela.
+
+
+3) Quando foi a primeira transmissão registrada na rede? Qual foi o
+conteúdo entregue nesta transmissão e o que ocorreu em
+seguida?
+
+Foi uma transmissão realizada em 29 de outubro de 1969, onde tentaram transmitir a palavra LOGIN. A transmissão falhou e foi transmitido apenas LO.
+
+
+4) A primeira versão da rede que deu origem à Internet interligava
+quantos computadores? Quais eram esses computadores?
+
+Interligava 4 computadores, eram eles: UCLA, SRI, UC Santa Barbara e Universidade de Utah, sendo nessa sequência os Host-1 até o Host-4.
+
+
+5) Qual era o nome do primeiro protocolo usado na transmissão de
+dados entre os controladores. Como ele funcionava?
+
+Era o NCP (Network Control Program). Tinha duas camadas principais que gerenciavam a tranferência e a troca de dados. 
+
+
+6) Quando surgiu o primeiro backbone brasileiro, seu acesso era
+destinado a que setor? E quando foi seu acesso a comunidade em
+geral?
+
+
+
+
+7) O que é um DNS e para que ele serve ?
+8) Data a imagem a seguir, descreva como é feita o carregamento de
+um site na internet quando requisitado por um cliente
+9) O que foi criado pelo cientista inglês Tim Berners-Lee ? E qual a
+contribuição para dele para a internet de hoje?
+10) O que ocorreu no final dos anos 2010? Essa evento recebeu
+qual nome ?
+11) Qual o nome se deu ao evento nos anos 2000? E o que ele
+prometia?12) Qual foi a foi a primeira instituição acadêmica no Brasil a se
+conectar as instituições americanas via internet ? Quando isso
+ocorreu ?
+13) O que é Semântica? Dê exemplo
+14) O que é Forma? Dê exemplo
+15) Dado um arquivo, IMAGE.PNG, como é a TAG que exibe a
+imagem em pagina index.html?
+
+<img>
+
+
+16) Crie em HTML a lista ordenada a seguir :
+Lista de presente de natal
+• Iphone
+• Ipad
+• Apple watch
+• Macbook
+
+<ul>
+	<li>iPhone</li>
+	<li>iPad</li>
+	<li>Apple Watch</li>
+	<li>MacBook</li>​
+</ul>
+
+17) Temos 3 imagens, imagem-p.png, image-m.png e imagem-
+g.png, sabe-se que essas imagens tem as seguintes larguras,
+respectivamente, 640 px, 1280px e 1920px. Como seria o código
+HTML para exibir essas imagens nos dispositivos Celular, Tablet e
+Desktop?
+
+<picture>
+	<source media=”(640px)” srcset=”imagem-p.png”>
+	<source media=”(1280px)” srcset=”image-m.png”>
+	<source media=”(1920px)” srcset=”image-g.png”>
+</picture>
+
+
+18) Qual o código utilizado para alterar o favoicon?
+
+<link rel=”shortcut icon” href=”favicon.png” type=”image/x-icon”>
+
+
+19) Para que serve o CSS em uma pagina?
+
+Para estilizar a página, organizar o modo de exibir a página corretamente.
+
+
+20) Para que serve o Javascript em uma pagina?
+
+Para adicionar programação em uma página e deixá-la mais dinâmica.
+
+
+21) Para que serve o HTML em uma pagina ?
+
+O HTML serve para escrever a base da página.
+
+
+22) O que é e qual o significado de W3C. porque ele foi criado?
+
+
+
+
+23) Como eu insiro o emoji 😀?
+
+
+
+
+24) Quais são as hierarquia de títulos no html?
+
+<h1> - maior título.
+<h6> - menor título.
+
+25) Escreva o código html da hierarquia a seguir:
+Capitulo 1
+Capitulo 1.1
+Capitulo 1.1.1
+Capitulo 1.1.1.1
+Capitulo 1.2
+Capitulo 1.2.1
+Capitulo 1.2.1.1
+
+<h1>Capítulo 1</h1>
+<h2>Capítulo 1.1</h2>
+<h3>Capítulo 1.1.1</h3>
+<h4>Capítulo 1.1.1.1</h4>
+<h1>Capítulo 2</h1>
+<h2>Capítulo 2.1</h2>
+<h3>Capítulo 2.1.1</h3>
+
+
+26)
+Data a estrutura a seguir:
+a. Questionario
+i. Index.html
+ii. Paginas
+1. Pag001.html
+2.
+iii. Imagens
+1. Livro.png
+2. arquivo.png
+Como seria o link para acessar o arquivo pag001.html a partir
+do index.html
+Como seria a tag no arquivo pag001.html para exibir a imagem
+livro.png?
+Como seria o link no arquivo pag001.html para voltar para o
+arquivo index.html
+27) O que é um link externo
+
+É um link que leva o usuário para fora da página HTML que ele estava.
+
+
+28) O que é um link interno?
+
+É um link que leva o usuário para outra parte de uma página HTML.
+
+
+29) Qual a tag de um link para download do arquivo image.png?
+
+<a href=”image.png” donwload>Baixe aqui sua imagem!</a>
+
+
+30) Qual a tag para uma lista não ordenada?
+
+<ul>
+
+
+31) Explique o uso de atributos em listas ordenadas
+(elemento <ol>), como o atributo type, e como eles influenciam
+na apresentação dos itens listados. Forneça exemplos de como
+diferentes valores desse atributo podem ser utilizados.
+
+O atributo “type” em uma <ol> determina o tipo de lista que vai ser exibida, por exemplo:
+I ou i – números romanos
+1 – algarismos
+a ou A - letras
+
+
+32) Examine o código abaixo e identifique os erros ou potenciais melhorias na
+estrutura da lista ordenada:
+<ol start="5" type="a">
+<li>Primeiro Item</li>
+<li>Segundo Item<ol>
+<li>Sub-item Um</li>
+<li>Sub-item Dois</li>
+<ol></li>
+<li>Terceiro Item</li>
+</ol>
+33) Crie um trecho de HTML que utiliza uma lista ordenada para
+criar um índice hierárquico para um documento fictício. O índice
+deve incluir pelo menos três níveis de subitens e usar diferentes
+tipos de marcadores para cada nível.34) Explique a diferença entre os elementos <thead>, <tbody>,
+e <tfoot> dentro de uma tabela HTML. Por que é importante
+estruturar uma tabela usando esses elementos? Inclua uma
+discussão sobre acessibilidade e usabilidade.
+35) Analise o código da tabela abaixo e identifique erros ou melhorias possíveis
+em termos de estrutura e semântica:
+<table>
+<tr>
+<th>Nome</td>
+<th>Idade</td>
+</tr>
+<tr>
+<td>Maria</td>
+<td>30</td>
+</tr>
+<thead>
+<tr>
+<td>Cabeçalho</td>
+</tr>
+</thead>
+<tfoot>
+<tr>
+<td>Rodapé</td>
+</tr>
+</tfoot>
+</table>
+36) Implemente uma tabela em HTML que organiza os resultados
+de quatro tipos diferentes de análises de dados (por exemplo,
+Matemática, Ciências, História e Línguas) para três estudantes
+fictícios.
+Utilize
+os
+elementos <thead>, <tbody>,
+e <tfoot> corretamente, incluindo colunas de totas para cada
+estudante, e calcule uma média geral para aparecer no rodapé da
+tabela.
