@@ -1,0 +1,19 @@
+body{
+    font-style: normal;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background-color: rgb(212, 253, 248);
+    color: blue;
+}
+
+h1{
+    color: whitesmoke;
+    background-color: salmon;
+}
+
+h2{
+    color: brown;
+}
+
+a{
+    color: orange;
+}
