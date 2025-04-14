@@ -1,0 +1,37 @@
+body {
+	font-family: 'Times New Roman', Times, serif;
+	background-color: #154360;
+}
+.a-all img {
+	width: 84px;
+	height: 84px;	
+}
+
+.a-all {
+	background-color: #2874a6;
+	padding: 20px;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	gap: 50px;
+}
+
+.a-text {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	color: #0d2636;
+	font-size: larger;
+}
+
+.main-text {
+	background-color: #2874a6;
+	justify-items: center;
+	margin-left: 200px;
+	margin-right: 200px;
+}
+
+p {
+	font-size: x-large;
+}
