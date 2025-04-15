@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Contatar o Maxwell</title>
+    <link href="../style.css" rel="stylesheet" type="text/css">
+    <link href="../source/contato.png" rel="icon" type="image/png">
+    <style>
+        .contact-container {
+            max-width: 800px;
+            margin: 40px auto;
+            background: steelblue;;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            color: #154360;
+            text-align: center;
+            margin-bottom: 30px;
+            align-self: center;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+        
+        input[type="text"],
+        input[type="tel"],
+        input[type="email"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: border 0.3s;
+        }
+        
+        input:focus,
+        textarea:focus,
+        select:focus {
+            border-color: #3498db;
+            outline: none;
+            box-shadow: 0 0 5px rgba(52,152,219,0.5);
+        }
+        
+        textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+        
+        .radio-group, .checkbox-group {
+            margin: 15px 0;
+        }
+        
+        .radio-option, .checkbox-option {
+            margin: 10px 0;
+            display: flex;
+            align-items: center;
+        }
+        
+        input[type="radio"],
+        input[type="checkbox"] {
+            margin-right: 10px;
+            width: 18px;
+            height: 18px;
+        }
+        
+        .time-slots {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            gap: 10px;
+            margin-top: 10px;
+        }
+        
+        .time-slots label {
+            display: flex;
+            align-items: center;
+            background: #f0f8ff;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        button {
+            background-color: #2980b9;
+            color: white;
+            border: none;
+            padding: 14px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            font-weight: 600;
+        }
+        
+        button:hover {
+            background-color: #154360;
+        }
+        
+        .required:after {
+            content: " *";
+            color: #e74c3c;
+        }
+    </style>
+</head>
+<body>
+    <div class="a-all">
+        <img src="../source/mlogo.png" alt="Logo do Maxwell" style="justify-items: left; margin-right: 400px;">
+        <a class="a-text" href="../index.html"><img src="../source/home.png" alt="Ícone de home"><span>Home</span></a>
+        <a class="a-text" href="../curriculo/curriculo.html"><img src="../source/curriculo.png" alt="Ícone de informações curriculares"><span>Currículo</span></a>
+        <a class="a-text" href="https://github.com/maxwllfc" target="_blank"><img src="../source/github.png" alt="Ícone do Github"><span>Github</span></a>
+        <a class="a-text" href="../servicos/servico.html"><img src="../source/servicos.png" alt="Ícone de Serviços" style="transform: rotate(45deg);"><span>Serviços</span></a>
+        <a class="a-text" href="contato.html"><img src="../source/contato.png" alt="Ícone de informações de contato"><span>Contato</span></a>
+        <img src="../source/mlogo.png" alt="Logo do Maxwell" style="justify-items: right; margin-left: 400px;">
+    </div>
+    <body>
+        <div class="contact-container">
+            <h1>Contato</h1>
+            <form action="#" method="POST">
+                <div class="form-group">
+                    <label for="nome" class="required">Nome Completo</label>
+                    <input type="text" id="nome" name="nome" required placeholder="Digite seu nome completo">
+                </div>
+                <div class="form-group">
+                    <label for="telefone" class="required">Telefone</label>
+                    <input type="tel" id="telefone" name="telefone" required placeholder="(00) 00000-0000" pattern="\([0-9]{2}\) [0-9]{4,6}-[0-9]{3,4}">
+                </div>
+                <div class="form-group">
+                    <label for="email" class="required">E-mail</label>
+                    <input type="email" id="email" name="email" required placeholder="seu@email.com">
+                </div>
+                <div class="form-group">
+                    <label class="required">Tipo de Cliente</label>
+                    <div class="radio-group">
+                        <div class="radio-option">
+                            <input type="radio" id="pf" name="tipo_cliente" value="pf" required>
+                            <label for="pf">Pessoa Física</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" id="pj" name="tipo_cliente" value="pj">
+                            <label for="pj">Pessoa Jurídica</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="required">Melhor Horário para Contato</label>
+                    <div class="time-slots">
+                        <label><input type="checkbox" name="horario" value="manha"> Manhã (8h-12h)</label>
+                        <label><input type="checkbox" name="horario" value="tarde"> Tarde (13h-18h)</label>
+                        <label><input type="checkbox" name="horario" value="noite"> Noite (19h-22h)</label>
+                        <label><input type="checkbox" name="horario" value="flexivel"> Horário Flexível</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="servico" class="required">Tipo de Serviço</label>
+                    <select id="servico" name="servico" required>
+                        <option value="" disabled selected>Selecione uma opção</option>
+                        <option value="homepage">HomePage Estática (R$300-600)</option>
+                        <option value="dinamica">Página Dinâmica (R$800-1.500)</option>
+                        <option value="avancada">Página Avançada (R$2.500+)</option>
+                        <option value="jogo2d">Jogo 2D Básico (R$500-1.000)</option>
+                        <option value="jogo2d-completo">Jogo 2D Completo (R$1.500-3.000)</option>
+                        <option value="outro">Outro (Descreva abaixo)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="descricao" class="required">Descrição do Projeto</label>
+                    <textarea id="descricao" name="descricao" required placeholder="Descreva com detalhes o que você precisa..."></textarea>
+                </div>
+                <button type="submit">Enviar Solicitação</button>
+            </form>
+        </div>
+    </body>
+</div>
