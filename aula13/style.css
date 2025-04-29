@@ -1,0 +1,42 @@
+.bigbox {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.box1 {
+    width: 300px;
+    height: 50px;
+    background-color: lightgray;
+    border-width: 10px;
+    border-style: solid;
+    border-color: red;
+    padding: 20px;
+    outline-style: solid;
+    outline-width: 10px;
+    outline-color: blue;
+    margin: 15px;
+}
+.box2 {
+    width: 300px;
+    height: 50px;
+    background-color: lightgray;
+    border-width: 10px;
+    border-style: solid;
+    border-color: blue;
+    padding: 20px;
+    outline-style: solid;
+    outline-width: 10px;
+    outline-color: red;
+    margin: 15px;
+}
+.box4 {
+    align-content: flex-start;
+}
+.hoverbox {
+    opacity: 0;
+    transition: opacity 0.3 ease-in-out;
+}
+    .hoverbox:hover {
+        opacity: 1;
+    }
