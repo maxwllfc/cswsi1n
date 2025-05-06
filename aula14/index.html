@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 14</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <form action="post">
+        <div>
+            <label for="Nome" class="required">Nome</label>
+            <input type="text" id="Nome" required placeholder="Digite seu nome aqui">
+        </div>
+        <br>
+        <div>
+            <label for="E-mail" class="required">E-mail</label>
+            <input type="text" id="E-mail" required placeholder="Digite seu E-mail aqui">
+        </div>
+        <br><br>
+        <div class="comment">
+            <label for="Comentário">Deixe um comentário:</label>
+            <br>
+            <textarea name="Comentário-Área" id="Comentário" cols="80" rows="10"></textarea>
+        </div>
+        <br>
+        <div>
+            <label for="User">Usuário</label>
+            <input type="email" id="User" required placeholder="Digite seu usuário aqui">
+        </div>
+        <br>
+        <div>
+            <label for="Senha">Senha</label>
+            <input type="password" id="Senha" required placeholder="Digite sua senha aqui">
+        </div>
+        <br>
+        <div>
+            <input type="checkbox" name="Botão-1" id="Botão-1">
+            <label for="Botão-1">Opção 1</label>
+            <br>
+            <input type="checkbox" name="Botão-2" id="Botão-2">
+            <label for="Botão-2">Opção 2</label>
+            <br>
+            <input type="checkbox" name="Botão-3" id="Botão-3">
+            <label for="Botão-3">Opção 3</label>
+        </div>
+        <br><br>
+        <div class="container-checkbox">
+            <label for="Botão-A">Opção 1</label>
+            <span class="checkmark"><input type="checkbox" name="Botão-A" id="checkmark"></span>
+            <br>
+            <label for="Botão-B">Opção 2</label>
+            <span class="checkmark"><input type="checkbox" name="Botão-B" id="checkmark"></span>
+            <br>
+            <label for="Botão-C">Opção 3</label>
+            <span class="checkmark"><input type="checkbox" name="Botão-C" id="checkmark"></span>
+        </div>
+        <br>
+        <div class="form-group">
+            <label for="esporte" class="required">Esporte eletrônico favorito:</label>
+            <select id="esporte" name="esporte" required>
+                <option value="" disabled selected>Selecione uma opção</option>
+                <option value="lol">League of Legends</option>
+                <option value="fortnite">Fortnite</option>
+                <option value="cs2">CS 2</option>
+                <option value="dota2">DOTA 2</option>
+                <option value="pubg">PUBG</option>
+                <option value="ff">Free Fire</option>
+            </select>
+            <br><br>
+        </div>
+        <br>
+        <div>
+            <label for="">Idade</label>
+            <input type="number" min="0" max="140">
+        </div>
+        <br>
+        <div>
+            <label for="">Escolha uma cor</label>
+            <br>
+            <input type="color">
+            <button>Clique aqui</button>
+        </div>
+        <br>
+        <div>
+            <label for="">Data e Hora</label>
+            <input type="datetime-local">
+        </div>
+        <br><br>
+        <div>
+            <label for="">Selecione um arquivo:</label>
+            <input type="file">
+            <br><br>
+            <input id="delete" type="reset">
+        </div>
+        <br>
+        <input id="submit" type="submit">
+    </form>
+</body>
+</html>

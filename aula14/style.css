@@ -1,0 +1,47 @@
+body {
+    background-color: aquamarine;
+}
+
+body input {
+    background-color: black;
+}
+
+.comment textarea {
+    background-color: black;
+}
+
+.container-checkbox input[type="checkbox"] {
+    -webkit-appearance: none; 
+    -moz-appearance: none;    
+    appearance: none;        
+    width: 20px;
+    height: 20px;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+  }
+  
+  .container-checkbox input[type="checkbox"]:checked {
+    background-color: #2196F3;
+    border: 1px solid #2196F3;
+  }
+  
+  .container-checkbox input[type="checkbox"]:checked::before {
+    content: '';
+    display: block;
+    width: 6px;
+    height: 6px;
+    background-color: white;
+    border-radius: 50%;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  #delete {
+    background-color: red;
+  }
+
+  #submit {
+    background-color: green;
+  }
