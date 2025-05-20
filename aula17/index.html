@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        body input {
+            box-shadow: 3px 3px 3px darkgray;
+        }
+
+        button {
+            background-color: greenyellow;
+            width: 200px;
+            height: 50px;
+        }
+
+        .bigdiv {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            background-color: gray;
+            padding: 100px;
+            box-shadow: 3px 3px 3px darkgray;
+            border-radius: 10px;
+        }
+        .buttondiv {
+            margin-left: 20px;
+            box-shadow: 3px 3px 3px darkgray;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 style="text-align: center;">Contador de idade</h1>
+    <div class="bigdiv">
+        <div>
+            <label for="ageInput">Qual é sua idade? </label>
+            <input id="ageInput" type="number" min="1">
+        </div>
+        <div class="buttondiv">
+            <button id="sendButton" style="font-family: 'Courier New', Courier, monospace ;">Identificar</button>
+        </div>
+    </div>
+    <script>
+        var ageInput = document.getElementById('ageInput');
+        var sendButton = document.getElementById('sendButton');
+
+        function verify() {
+            var age = Number(ageInput.value);
+
+            if (isNaN(age) || age < 1) {
+                window.alert(`Você não pode ter menos que 1 ano.`)
+            }
+            else if (age == 1) {
+                window.alert(`Você tem ${age} ano e é uma criança.`)
+            }
+            else if (age > 0 && age < 10) {
+                window.alert(`Você tem ${age} anos e é uma criança.`)
+            }
+            else if (age > 9 && age < 15) {
+                window.alert(`Você tem${age} anos e é um adolescente.`)
+            }
+            else if (age > 14 && age < 25) {
+                window.alert(`Você tem ${age} anos e é um jovem.`)
+            }
+            else if (age > 24 && age < 60) {
+                window.alert(`Você tem ${age} anos e é um adulto.`)
+            }
+            else if (age > 59 && age < 131) {
+                window.alert(`Você tem ${age} anos e é um idoso.`)
+            }
+            else {
+                window.alert(`Você tem ${age} anos e é um alienígina.`)
+            }
+        }
+
+        sendButton.addEventListener('click', verify);
+    </script>
+</body>
+
+</html>
