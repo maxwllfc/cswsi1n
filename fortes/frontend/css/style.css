@@ -1,0 +1,530 @@
+body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #C3FEDC; /* Cor de fundo geral */
+            overflow-x: hidden; /* Evita rolagem horizontal indesejada */
+            scroll-behavior: smooth; /* Rolagem suave para âncoras */
+        }
+
+        h1, h2, h3, p, ul {
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        button {
+            border: none;
+            cursor: pointer;
+            background: none;
+            padding: 0;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block; /* Remove espaço extra abaixo de imagens */
+        }
+
+        /* Header */
+        header {
+            position: fixed; /* Fixa o header no topo */
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #038C7F; /* Verde escuro */
+            color: white;
+            padding: 15px 20px; /* Ajusta padding */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); /* Sombra mais sutil */
+            z-index: 1000; /* Garante que o header fique acima de tudo */
+        }
+
+        header .logo {
+            width: 100px; /* Tamanho da logo */
+            height: auto;
+        }
+
+        header nav {
+            display: flex;
+            align-items: center;
+            gap: 20px; /* Espaço entre os itens da navegação */
+        }
+
+        .sections {
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .sections:hover {
+            color: #154432; /* Verde mais escuro no hover */
+        }
+
+        .botao_entrar {
+            padding: 8px 20px; /* Padding ajustado */
+            color: #FFFEE6; /* Amarelo claro */
+            background-color: #016458; /* Verde forte */
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .botao_entrar:hover {
+            background-color: #00524C; /* Verde ainda mais escuro no hover */
+        }
+
+        .cadastre {
+            color: #fff;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .cadastre:hover {
+            color: #154432;
+        }
+
+        /* Seção Home (Primeira Dobra - Layout de Duas Colunas) */
+        #home {
+            display: flex;
+            width: 100%;
+            /* Calculamos 100vh menos a altura do header para que ocupe o restante da tela */
+            height: calc(100vh - 80px); /* Supondo 80px de altura para o header */
+            padding-top: 80px; /* Espaço para o header fixo */
+            box-sizing: border-box; /* Inclui padding na altura total */
+        }
+
+        .home-left-column {
+            width: 50%; /* Ocupa metade da largura da tela */
+            display: flex;
+            flex-direction: column; /* Empilha os dois blocos verticalmente */
+            height: 100%; /* Ocupa 100% da altura da seção home */
+            box-sizing: border-box;
+        }
+
+        .home-right-column {
+            width: 50%; /* Ocupa metade da largura da tela */
+            height: 100%; /* Ocupa 100% da altura da seção home */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden; /* Garante que a imagem não vaze */
+        }
+
+        .hero-tree-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Cobre a área sem distorcer, cortando se necessário */
+            display: block;
+        }
+
+        /* Bloco superior esquerdo: Paleta (verde escuro) */
+        .paleta {
+            background-color: #016458; /* Verde forte */
+            color: white;
+            padding: 30px;
+            width: 100%; /* Ocupa a largura total da coluna esquerda */
+            height: 50%; /* Ocupa metade da altura da coluna esquerda */
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            gap: 15px; /* Espaçamento entre os elementos internos */
+            position: relative;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+            box-sizing: border-box;
+            border-radius: 0; /* Remove cantos arredondados para alinhamento */
+        }
+        
+        /* Bolinhas (agora divs com background-color) */
+        .bolinhas {
+            position: absolute;
+            width: 25px; /* Tamanho das bolinhas */
+            height: 25px;
+            border-radius: 50%;
+        }
+        .bolinhas:nth-child(1) { top: 20px; left: 20px; background-color: #C3FEDC; } /* Verde claro */
+        .bolinhas:nth-child(2) { top: 20px; left: 60px; background-color: #66A182; } /* Verde acinzentado */
+        .bolinhas:nth-child(3) { top: 20px; left: 100px; background-color: #038C7F; } /* Verde escuro */
+        .bolinhas:nth-child(4) { top: 20px; left: 140px; background-color: #00524C; } /* Verde ainda mais escuro */
+
+
+        .text_paleta {
+            font-size: 2.5em; /* Tamanho da fonte responsivo */
+            font-weight: bold;
+            margin-top: 50px; /* Afasta o texto das bolinhas */
+            text-align: left;
+            line-height: 1.2;
+        }
+
+        .simbolo {
+            width: 100px; /* Tamanho do símbolo de reciclagem */
+            height: auto;
+            position: absolute; /* Posição absoluta dentro da paleta */
+            bottom: 20px;
+            right: 20px;
+        }
+
+        /* Bloco inferior esquerdo: Descrição (verde médio) */
+        .descricao { /* Reutilizando a classe existente para este bloco */
+            background-color: #00AB71; /* Verde médio */
+            color: white;
+            padding: 30px;
+            width: 100%; /* Ocupa a largura total da coluna esquerda */
+            height: 50%; /* Ocupa metade da altura da coluna esquerda */
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start; /* Alinha texto à esquerda */
+            justify-content: center;
+            box-sizing: border-box;
+            border-radius: 0; /* Remove cantos arredondados para alinhamento */
+            margin-top: 0; /* Garante que não há margem extra */
+        }
+
+        .tit_descricao {
+            background-color: transparent; /* Remove background color */
+            padding: 0; /* Remove padding */
+            font-size: 1.8em;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-align: left; /* Alinha o título à esquerda */
+        }
+
+        .desc {
+            font-size: 1.1em;
+            line-height: 1.6;
+            text-align: left; /* Alinha o texto à esquerda */
+        }
+
+        /* Imagem da árvore (removida do fluxo normal, agora é a hero-tree-image) */
+        .arvore {
+            display: none; /* Esconde a imagem antiga, pois agora usamos hero-tree-image */
+        }
+        
+        /* Seção Sobre Nós */
+        .sobre-nos {
+            background-color: #038C7F; /* Verde escuro */
+            color: white;
+            padding: 60px 20px; /* Mais padding */
+            font-family: Arial, sans-serif;
+            margin-top: 0; /* Remove a margem superior desnecessária */
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .titulosb {
+            text-align: center;
+            font-size: 2.5em; /* Tamanho de fonte responsivo */
+            font-weight: bold;
+            margin-bottom: 40px;
+            background-color: #016458; /* Verde forte */
+            padding: 15px 20px;
+            border-radius: 5px;
+        }
+
+        .conteudo {
+            display: flex;
+            flex-wrap: wrap; /* Permite que as colunas quebrem a linha */
+            gap: 40px; /* Espaço entre as colunas */
+            justify-content: center; /* Centraliza as colunas */
+        }
+
+        .coluna-esquerda,
+        .coluna-direita {
+            flex: 1 1 45%; /* Cada coluna ocupa 45% e cresce/diminui */
+            min-width: 300px; /* Largura mínima para evitar que fiquem muito estreitas */
+        }
+
+        .sobre-nos h3 {
+            font-size: 1.5em; /* Tamanho do subtítulo */
+            font-weight: bold;
+            margin-bottom: 15px;
+            text-align: center; /* Centraliza subtítulos */
+        }
+
+        .intro {
+            font-weight: bold;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .texto {
+            margin-bottom: 15px;
+            line-height: 1.6;
+            text-align: justify; /* Justifica o texto para melhor leitura */
+        }
+
+        .logoInova {
+            width: 80%; /* Responsivo */
+            max-width: 400px; /* Tamanho máximo */
+            height: auto;
+            margin: 30px auto 0 auto; /* Centraliza e adiciona margem superior */
+            display: block;
+        }
+
+        .imagem-predio {
+            width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Seção Serviços */
+        .servicos {
+            background-color: #016458; /* Verde forte */
+            color: white;
+            padding: 60px 20px; /* Mais padding */
+            margin-left: 0; /* Remove margem negativa */
+            margin-bottom: 0; /* Remove margem negativa */
+            text-align: center;
+        }
+
+        .h2back {
+            background-color: #038C7F; /* Verde escuro */
+            padding: 15px 20px;
+            border-radius: 5px;
+            margin: 0 auto 40px auto; /* Centraliza e adiciona margem inferior */
+            max-width: 400px; /* Largura limitada */
+        }
+        .servicos h2 {
+            font-size: 2.5em; /* Tamanho de fonte responsivo */
+            font-weight: bold;
+        }
+
+        .servicos-container {
+            display: flex;
+            justify-content: center; /* Centraliza os serviços */
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+
+        .servico {
+            max-width: 450px; /* Ajuste para ter mais espaço */
+            text-align: center;
+            background-color: #00AB71; /* Verde médio */
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transition: transform 0.2s;
+        }
+
+        .servico:hover {
+            transform: translateY(-5px); /* Efeito de elevação no hover */
+        }
+
+        .servico h3 {
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            color: #FFFEE6; /* Amarelo claro */
+        }
+
+        .servico p {
+            line-height: 1.6;
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        .servico img {
+            width: 150px; /* Tamanho das imagens dos serviços */
+            height: auto;
+            margin: 0 auto;
+            display: block;
+        }
+
+        /* Seção Fale Conosco */
+        .fale-conosco {
+            background-color: #00AB71; /* Verde médio */
+            margin-top: 0; /* Remove margem negativa */
+            padding: 60px 20px;
+            text-align: center;
+            width: 100%;
+            color: white;
+        }
+
+        .fale-conosco h3 {
+            font-size: 2em; /* Tamanho do título */
+            margin-bottom: 30px;
+            font-weight: bold;
+        }
+
+        .contatos {
+            display: flex;
+            justify-content: center; /* Centraliza os contatos */
+            flex-wrap: wrap;
+            gap: 30px; /* Espaço entre os contatos */
+            color: white;
+        }
+
+        .contato {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            min-width: 180px; /* Largura mínima para cada contato */
+        }
+
+        .contato img {
+            width: 40px; /* Tamanho dos ícones de contato */
+            height: 40px;
+            margin-bottom: 10px;
+            filter: brightness(0) invert(1); /* Ícones brancos */
+        }
+
+        .contato p {
+            font-size: 1em;
+            line-height: 1.4;
+        }
+        .contato p strong {
+            display: block; /* Quebra a linha para o texto forte */
+        }
+
+        /* Footer */
+        footer {
+            background-color: #038C7F; /* Verde escuro */
+            color: white; /* Texto branco */
+            padding: 20px 20px;
+            text-align: center;
+            width: 100%;
+            display: flex;
+            justify-content: space-between; /* Alinha o copyright à esquerda e a logo à direita */
+            align-items: center;
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3); /* Sombra superior */
+            z-index: 1000;
+            position: relative; /* Ajuste para o footer não se sobrepor negativamente */
+            bottom: auto; /* Remove posicionamento absoluto desnecessário */
+            left: auto;
+            height: auto;
+        }
+
+        .logofooter {
+            width: 80px; /* Tamanho da logo no footer */
+            height: auto;
+        }
+
+        /* Media Queries para Responsividade */
+        @media (max-width: 767px) {
+            #home {
+                flex-direction: column; /* Empilha as colunas verticalmente em telas pequenas */
+                height: auto; /* Permite que a altura se ajuste ao conteúdo */
+                padding-top: 60px; /* Ajuste para o header em mobile */
+            }
+            .home-left-column, .home-right-column {
+                width: 100%; /* Ocupam a largura total */
+                height: auto; /* Altura se ajusta ao conteúdo */
+            }
+            .paleta, .descricao {
+                height: auto; /* Altura se ajusta ao conteúdo */
+                min-height: unset; /* Remove min-height fixo */
+                padding: 20px; /* Menor padding em mobile */
+            }
+            .text_paleta {
+                font-size: 1.8em; /* Fonte menor para mobile */
+                margin-top: 30px;
+            }
+            .simbolo {
+                width: 80px; /* Símbolo menor */
+                bottom: 10px;
+                right: 10px;
+            }
+            .bolinhas {
+                width: 15px; /* Bolinhas menores */
+                height: 15px;
+            }
+            .bolinhas:nth-child(1) { top: 10px; left: 10px; }
+            .bolinhas:nth-child(2) { top: 10px; left: 35px; }
+            .bolinhas:nth-child(3) { top: 10px; left: 60px; }
+            .bolinhas:nth-child(4) { top: 10px; left: 85px; }
+
+            .tit_descricao {
+                font-size: 1.5em;
+            }
+            .desc {
+                font-size: 1em;
+            }
+            .sobre-nos, .servicos, .fale-conosco {
+                padding: 40px 15px; /* Reduz padding lateral */
+            }
+            .titulosb, .h2back h2, .fale-conosco h3 {
+                font-size: 2em; /* Ajusta tamanhos de títulos */
+            }
+        }
+
+        @media (min-width: 768px) {
+            #home {
+                flex-direction: row; /* Colunas lado a lado */
+            }
+            .home-left-column, .home-right-column {
+                width: 50%;
+                height: 100%; /* Voltam a ocupar metade da largura e altura total */
+            }
+            .paleta, .descricao {
+                height: 50%; /* Metade da altura da coluna */
+            }
+            .text_paleta {
+                font-size: 3em;
+            }
+            .simbolo {
+                width: 120px;
+            }
+            .bolinhas {
+                width: 20px;
+                height: 20px;
+            }
+            .bolinhas:nth-child(1) { top: 20px; left: 20px; }
+            .bolinhas:nth-child(2) { top: 20px; left: 50px; }
+            .bolinhas:nth-child(3) { top: 20px; left: 80px; }
+            .bolinhas:nth-child(4) { top: 20px; left: 110px; }
+            .tit_descricao, .titulosb, .h2back h2 {
+                font-size: 2.2em;
+            }
+            .desc {
+                font-size: 1.2em;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .paleta, .descricao {
+                padding: 40px; /* Aumenta padding em telas maiores */
+            }
+            .text_paleta {
+                font-size: 4em;
+            }
+            .simbolo {
+                width: 150px;
+            }
+            .bolinhas {
+                width: 25px;
+                height: 25px;
+            }
+            .bolinhas:nth-child(1) { top: 20px; left: 20px; }
+            .bolinhas:nth-child(2) { top: 20px; left: 60px; }
+            .bolinhas:nth-child(3) { top: 20px; left: 100px; }
+            .bolinhas:nth-child(4) { top: 20px; left: 140px; }
+            .tit_descricao, .titulosb, .h2back h2 {
+                font-size: 2.5em;
+            }
+            .desc {
+                font-size: 1.3em;
+            }
+            .coluna-esquerda, .coluna-direita {
+                flex: 1 1 48%; /* Ajuste fino para colunas */
+            }
+            .servicos-container {
+                gap: 60px;
+            }
+            .fale-conosco h3 {
+                font-size: 3em;
+            }
+        }

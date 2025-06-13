@@ -1,0 +1,809 @@
+/* Estilos globais e de layout */
+        body {
+            font-family: Arial, sans-serif; /* Fonte genérica */
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #e0f2f7; /* Cor de fundo principal clara */
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            overflow-x: hidden; /* Evita rolagem horizontal indesejada */
+        }
+
+        .hidden {
+            display: none !important;
+        }
+
+        /* Header e Navegação */
+        .main-header {
+            background-color: #038C7F; /* Cor de fundo do cabeçalho */
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            padding: 1rem;
+            display: flex;
+            flex-wrap: wrap; /* Permite que os itens quebrem a linha */
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            z-index: 10;
+        }
+
+        .main-header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            margin-bottom: 1rem;
+        }
+
+        .header-title {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: white;
+            margin-right: 1rem;
+        }
+
+        .main-nav {
+            display: flex;
+            gap: 0.5rem; /* Espaço entre os botões de navegação */
+        }
+
+        .tab-button {
+            padding: 0.5rem 0.75rem;
+            color: white;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            background-color: transparent;
+            border-radius: 0.5rem;
+            transition: background-color 0.2s ease-in-out, border-bottom 0.2s ease-in-out;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none; /* Remover sublinhado de links */
+        }
+
+        .tab-button img {
+            width: 24px;
+            height: 24px;
+            margin-bottom: 0.2rem;
+        }
+
+        .tab-button.active {
+            border-bottom: 3px solid #F28F00; /* Cor de destaque laranja para abas ativas */
+            color: #F28F00;
+        }
+        .tab-button.active img {
+            filter: brightness(0) saturate(100%) invert(75%) sepia(88%) saturate(1987%) hue-rotate(352deg) brightness(101%) contrast(105%); /* Laranja */
+        }
+
+        .tab-button:hover {
+            background-color: rgba(255, 255, 255, 0.15);
+        }
+
+        /* Account Hub (Dropdown do Usuário) */
+        .account-hub {
+            position: relative;
+            margin-left: auto;
+            align-self: flex-start; /* Alinha o hub ao topo direito do header em telas pequenas */
+        }
+
+        .account-toggle {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .user-name-header {
+            color: white;
+            font-weight: 500;
+            margin-right: 0.5rem;
+            display: none; /* Escondido por padrão em telas pequenas, mostrado em media query */
+        }
+
+        .user-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 2px solid white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .account-hub-dropdown {
+            position: absolute;
+            top: calc(100% + 10px); /* Espaço abaixo do avatar */
+            right: 0;
+            background-color: white;
+            border-radius: 0.5rem;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            padding: 1rem;
+            width: 250px;
+            z-index: 999;
+            transform-origin: top right;
+            animation: fadeInScale 0.2s ease-out;
+        }
+
+        @keyframes fadeInScale {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .dropdown-avatar {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: block;
+            margin: 0 auto 0.75rem auto;
+            border: 3px solid #e0f2f7; /* Cor de borda mais suave */
+        }
+
+        .dropdown-username {
+            text-align: center;
+            font-weight: bold;
+            color: #2d3748;
+            margin-bottom: 0.25rem;
+        }
+
+        .dropdown-email {
+            text-align: center;
+            font-size: 0.875rem;
+            color: #4a5568;
+            margin-bottom: 0.5rem;
+        }
+
+        .dropdown-usertype {
+            text-align: center;
+            font-size: 0.75rem;
+            color: #718096;
+            margin-bottom: 1.5rem;
+        }
+
+        .logout-button {
+            background-color: #ef4444; /* Vermelho mais vibrante */
+            color: white;
+            font-weight: bold;
+            padding: 0.75rem 1rem;
+            border-radius: 0.5rem;
+            width: 100%;
+            transition: background-color 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .logout-button:hover {
+            background-color: #dc2626;
+        }
+
+        /* Conteúdo Principal */
+        .content-container {
+            max-width: 1300px; /* Aumentado para melhor visualização dos cards */
+            margin: 1.5rem auto; /* Mais margem superior e inferior */
+            padding: 1rem;
+            flex-grow: 1;
+            background-color: #FFFFFF; /* Fundo branco para o container principal */
+            border-radius: 1rem; /* Cantos mais arredondados */
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .tab-content {
+            padding: 1.5rem;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #038C7F; /* Título principal verde */
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+        .section-title + .message-text {
+            margin-top: -1rem; /* Ajuste para centralizar mensagem com título */
+        }
+
+        /* Seção Dashboard - Estatísticas */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Mais espaço para os itens */
+            gap: 1.5rem; /* Mais espaço entre os itens */
+            margin-bottom: 2rem;
+        }
+
+        .stat-item {
+            background-color: #F0F2F5; /* Cinza claro para os itens de estatística */
+            padding: 1.5rem;
+            border-radius: 1rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .stat-item:hover {
+            transform: translateY(-5px); /* Efeito de elevação no hover */
+        }
+
+        .stat-item h3 {
+            font-weight: 600;
+            color: #2d3748; /* Cor de texto padrão */
+            margin-bottom: 0.75rem;
+            font-size: 1.1rem;
+        }
+
+        .stat-item p {
+            font-size: 3rem; /* Tamanho maior para números */
+            font-weight: bold;
+            color: #F28F00; /* Laranja vibrante */
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-item .icon-lixeira {
+            width: 80px;
+            height: 80px;
+            margin-top: 1rem;
+        }
+
+        .stat-item .status-message {
+            font-size: 1rem;
+            color: #038C7F; /* Verde para mensagens de status */
+            font-weight: 600;
+        }
+
+        /* Gráficos do Dashboard */
+        .chart-container {
+            width: 100%;
+            height: 250px; /* Altura fixa para os gráficos */
+            background-color: white; /* Fundo branco para a área do gráfico */
+            border-radius: 0.75rem;
+            box-shadow: inset 0 0 5px rgba(0,0,0,0.1); /* Sombra interna para o gráfico */
+            padding: 1rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden; /* Garante que o conteúdo do canvas não vaze */
+            position: relative;
+        }
+        .chart-placeholder {
+            color: #718096;
+            font-style: italic;
+        }
+        canvas {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+
+        /* Cards de Lixo (Dashboard e Status) */
+        .available-lixos-grid,
+        .my-collections-grid,
+        .collected-reciclador-lixos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            justify-content: center;
+        }
+
+        .lixo-card {
+            padding: 1.2rem;
+            border-radius: 1rem; /* Cantos mais arredondados */
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+            transition: all 0.3s ease-in-out;
+            color: white; /* Cor de texto padrão para cards */
+        }
+
+        .lixo-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+        }
+
+        .lixo-card.status-Pendente { background-color: #007bff; } /* Azul Bootstrap */
+        .lixo-card.status-Reciclador-a-caminho { background-color: #ffc107; } /* Amarelo Bootstrap */
+        .lixo-card.status-Coletado { background-color: #28a745; } /* Verde Bootstrap */
+        .lixo-card.status-Cancelado { background-color: #dc3545; } /* Vermelho Bootstrap */
+
+
+        .lixo-card h3 {
+            font-size: 1.4rem;
+            font-weight: bold;
+            margin-bottom: 0.75rem;
+            text-align: center;
+            color: white; /* Título branco */
+        }
+
+        .icon-lixo {
+            width: 90px; /* Ícones maiores */
+            height: 90px;
+            color: white;
+            margin: 0 auto 1rem auto;
+        }
+
+        .lixo-card-details {
+            text-align: center;
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+
+        .lixo-card-details strong {
+            font-weight: 700;
+        }
+
+        .lixo-card-details p {
+            margin-bottom: 0.3rem;
+        }
+
+        .lixo-card-details .text-muted {
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .card-buttons-container {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            margin-top: 1rem;
+            gap: 0.6rem; /* Espaço entre os botões do card */
+        }
+
+        .action-button,
+        .comments-button {
+            background-color: rgba(255, 255, 255, 0.25); /* Fundo semi-transparente */
+            color: white;
+            font-weight: 600;
+            padding: 0.6rem 1rem;
+            border-radius: 0.75rem; /* Cantos mais arredondados */
+            width: 100%;
+            transition: background-color 0.2s, transform 0.1s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .action-button:hover,
+        .comments-button:hover {
+            background-color: rgba(255, 255, 255, 0.4);
+            transform: translateY(-2px); /* Pequena elevação no hover */
+        }
+
+        .cancel-button {
+            background-color: #e62e2e; /* Vermelho para cancelar */
+            color: white;
+            border-radius: 50%;
+            width: 32px; /* Maior para facilitar o clique */
+            height: 32px;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            position: absolute;
+            top: 0.75rem;
+            right: 0.75rem;
+            transition: background-color 0.2s;
+            border: none;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+        }
+
+        .cancel-button:hover {
+            background-color: #c02020;
+        }
+
+        .action-unavailable {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
+            text-align: center;
+            width: 100%;
+            padding: 0.5rem 0;
+        }
+
+        /* Formulários e Filtros */
+        .form-layout {
+            display: grid;
+            grid-template-columns: 1fr; /* Coluna única por padrão */
+            gap: 1.5rem;
+            padding: 1rem;
+            border-radius: 1rem;
+            background-color: #f7f7f7;
+            box-shadow: inset 0 0 8px rgba(0,0,0,0.05);
+        }
+
+        .input-label {
+            display: block;
+            color: #2d3748;
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .input-field {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #c9d6de;
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+
+        .input-field:focus {
+            outline: none;
+            border-color: #038C7F;
+            box-shadow: 0 0 0 3px rgba(3, 140, 127, 0.2); /* Sombra de foco verde */
+        }
+
+        .full-width-field {
+            grid-column: 1 / -1; /* Ocupa a largura total no grid */
+        }
+
+        .imageEnviar {
+            text-align: center;
+            margin-top: 1.5rem;
+            grid-column: 1 / -1; /* Garante que a imagem esteja em sua própria linha */
+        }
+
+        .latas {
+            max-width: 90%;
+            height: auto;
+            border-radius: 1rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease-in-out;
+        }
+        .latas:hover {
+            transform: scale(1.02);
+        }
+
+        .btn_enviar {
+            text-align: right;
+            grid-column: 1 / -1;
+            margin-top: 1.5rem;
+        }
+
+        .submit-button {
+            background-color: #038C7F; /* Verde principal para botões de ação */
+            color: white;
+            font-weight: bold;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.75rem;
+            transition: background-color 0.2s, transform 0.1s;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+            font-size: 1rem;
+        }
+
+        .submit-button:hover {
+            background-color: #02665e;
+            transform: translateY(-2px);
+        }
+
+        .filter-controls {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background-color: #f7f7f7;
+            border-radius: 1rem;
+            box-shadow: inset 0 0 8px rgba(0,0,0,0.05);
+        }
+
+        /* Mensagens de feedback */
+        .message-text {
+            margin-top: 1.5rem;
+            text-align: center;
+            font-size: 1rem;
+            color: #718096;
+            font-weight: 500;
+        }
+        .message-text.success {
+            color: #28a745;
+            font-weight: bold;
+        }
+        .message-text.error {
+            color: #dc3545;
+            font-weight: bold;
+        }
+
+        /* Modal Base */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7); /* Fundo mais escuro */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+        }
+
+        .modal-overlay:not(.hidden) {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal-content {
+            background-color: white;
+            padding: 2.5rem; /* Mais padding */
+            border-radius: 1rem; /* Mais arredondado */
+            width: 95%;
+            max-width: 700px; /* Maior largura máxima */
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            animation: modalSlideUp 0.3s ease-out;
+        }
+
+        @keyframes modalSlideUp {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem; /* Mais afastado da borda */
+            font-size: 2.5rem; /* Maior para facilitar o clique */
+            cursor: pointer;
+            color: #718096; /* Cor cinza suave */
+            transition: color 0.2s;
+        }
+
+        .modal-close:hover {
+            color: #2d3748; /* Mais escuro no hover */
+        }
+
+        /* Modal de Comentários */
+        .comments-list {
+            max-height: 20rem; /* Maior altura máxima */
+            overflow-y: auto;
+            border: 1px solid #e2e8f0;
+            padding: 1rem;
+            border-radius: 0.75rem;
+            background-color: #f7fafc;
+            margin-bottom: 1.5rem;
+            box-shadow: inset 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        .comment-item {
+            border-bottom: 1px solid #e2e8f0;
+            padding: 0.75rem 0;
+        }
+
+        .comment-item:last-child {
+            border-bottom: none;
+        }
+
+        .comment-author {
+            color: #2d3748;
+            font-weight: bold;
+            margin-bottom: 0.2rem;
+        }
+
+        .comment-date {
+            color: #718096;
+            font-size: 0.75rem;
+            margin-left: 0.5rem;
+        }
+
+        .comment-text {
+            color: #4a5568;
+            line-height: 1.4;
+            word-wrap: break-word; /* Garante que o texto quebre a linha */
+        }
+
+        .comment-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .comment-textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #c9d6de;
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            resize: vertical; /* Permite redimensionar verticalmente */
+        }
+
+        .comment-submit-button {
+            background-color: #038C7F;
+            color: white;
+            font-weight: bold;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.75rem;
+            transition: background-color 0.2s, transform 0.1s;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+            font-size: 1rem;
+        }
+
+        .comment-submit-button:hover {
+            background-color: #02665e;
+            transform: translateY(-2px);
+        }
+
+        /* Modal de Ajuda */
+        #modal-ajuda {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+        }
+        #modal-ajuda:target { /* Quando o link btn-ajuda é clicado, :target ativa o modal */
+            opacity: 1;
+            visibility: visible;
+        }
+        .modal-ajuda-conteudo {
+            background-color: white;
+            padding: 2.5rem;
+            border-radius: 1rem;
+            width: 95%;
+            max-width: 800px;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            animation: modalSlideUp 0.3s ease-out;
+        }
+        .fechar-ajuda {
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+            font-size: 2.5rem;
+            text-decoration: none;
+            color: #718096;
+            transition: color 0.2s;
+        }
+        .fechar-ajuda:hover {
+            color: #2d3748;
+        }
+        .modal-ajuda-conteudo h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 1.5rem;
+            color: #038C7F;
+            text-align: center;
+        }
+        .modal-ajuda-conteudo h2 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+            color: #038C7F;
+            border-bottom: 2px solid #e0f2f7;
+            padding-bottom: 0.5rem;
+        }
+        .modal-ajuda-conteudo h3 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-top: 1rem;
+            margin-bottom: 0.75rem;
+            color: #F28F00;
+        }
+        .modal-ajuda-conteudo p {
+            margin-bottom: 1rem;
+            color: #4a5568;
+            line-height: 1.6;
+        }
+        .modal-ajuda-conteudo ul {
+            list-style: disc;
+            margin-left: 2rem;
+            margin-bottom: 1.5rem;
+            color: #4a5568;
+        }
+        .modal-ajuda-conteudo li {
+            margin-bottom: 0.6rem;
+            line-height: 1.5;
+        }
+        .btn-ajuda {
+            display: inline-block;
+            margin-right: 1rem;
+            padding: 0.5rem;
+            border-radius: 50%;
+            transition: background-color 0.2s;
+        }
+        .btn-ajuda:hover {
+            background-color: rgba(255, 255, 255, 0.15);
+        }
+        .btn-ajuda img {
+            width: 32px;
+            height: 32px;
+            filter: brightness(0) invert(1); /* Ícone branco */
+        }
+
+        /* Ícones genéricos (apenas para consistência) */
+        .icon {
+            width: 20px;
+            height: 20px;
+        }
+        .icon-lixeira { /* Para o ícone grande no dashboard */
+            width: 100px;
+            height: 100px;
+            color: #F28F00; /* Lixeira laranja */
+        }
+
+        /* Media Queries para Responsividade */
+        @media (min-width: 600px) {
+            .main-header {
+                flex-direction: row;
+            }
+            .main-header-content {
+                width: auto;
+                margin-bottom: 0;
+            }
+            .user-name-header {
+                display: block; /* Mostra o nome do usuário no cabeçalho em telas maiores */
+            }
+            .form-layout {
+                grid-template-columns: repeat(2, 1fr); /* Duas colunas para o formulário */
+            }
+            .imageEnviar {
+                grid-column: 2 / 3; /* Imagem na segunda coluna */
+                grid-row: 1 / span 3; /* Ocupa 3 linhas */
+                align-self: center; /* Centraliza verticalmente */
+            }
+            .selecoes {
+                grid-column: 1 / 2; /* Seleções na primeira coluna */
+            }
+            .btn_enviar {
+                grid-column: 1 / -1; /* Botão de enviar em linha completa */
+            }
+            .filter-controls {
+                grid-template-columns: repeat(2, 1fr); /* Duas colunas para filtros */
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .content-container {
+                padding: 2rem; /* Mais padding em telas maiores */
+            }
+            .section-title {
+                font-size: 2.5rem; /* Títulos maiores */
+            }
+            .stats-grid {
+                grid-template-columns: repeat(3, 1fr); /* Três colunas para estatísticas */
+            }
+            .form-layout {
+                grid-template-columns: 2fr 1fr; /* Mais espaço para inputs, menos para imagem */
+            }
+            .imageEnviar {
+                grid-column: 2 / 3;
+                grid-row: 1 / span 3;
+            }
+            .my-collections-grid, .available-lixos-grid, .collected-reciclador-lixos-grid {
+                grid-template-columns: repeat(3, 1fr); /* 3 cards por linha em telas grandes */
+            }
+        }

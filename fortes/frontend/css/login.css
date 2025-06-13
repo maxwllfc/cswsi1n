@@ -1,0 +1,475 @@
+/* Estilos Globais e do Layout Principal */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #038C7F; /* Cor de fundo do cabeçalho */
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* Garante que o corpo ocupe a altura total da viewport */
+            align-items: center; /* Centraliza horizontalmente o conteúdo do body */
+            justify-content: center; /* Centraliza verticalmente o conteúdo do body */
+            overflow-x: hidden; /* Evita rolagem horizontal */
+        }
+
+        header {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            padding: 1.5rem 0; /* Mais padding no header */
+            position: absolute; /* Posiciona o header no topo */
+            top: 0;
+            left: 0;
+            background-color: #038C7F; /* Garante que o header tenha a cor correta */
+            z-index: 10; /* Garante que o header fique acima de outros elementos */
+        }
+
+        .logo {
+            max-width: 150px; /* Tamanho da logo */
+            height: auto;
+        }
+
+        /* Caixa do Formulário de Login */
+        .form-box {
+            background-color: #006B63; /* Fundo mais escuro para a caixa do formulário */
+            padding: 2.5rem 2rem; /* Mais padding interno */
+            border-radius: 15px; /* Cantos mais arredondados */
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4); /* Sombra mais proeminente */
+            width: 90%; /* Ocupa 90% da largura em telas pequenas */
+            max-width: 450px; /* Largura máxima para telas maiores */
+            text-align: center; /* Centraliza o texto dentro da caixa */
+            position: relative; /* Para posicionar o botão de voltar e o ícone */
+            margin-top: 80px; /* Espaço para o header */
+            margin-bottom: 20px; /* Espaço para o rodapé ou parte inferior da tela */
+        }
+
+        .voltar {
+            position: absolute;
+            top: 1.5rem;
+            left: 1.5rem;
+            display: block;
+            padding: 0.5rem;
+            border-radius: 50%; /* Faz o fundo do botão redondo */
+            transition: background-color 0.2s ease-in-out;
+        }
+        .voltar:hover {
+            background-color: rgba(255, 255, 255, 0.1); /* Efeito de hover no botão de voltar */
+        }
+
+        .voltar img {
+            width: 24px;
+            height: 24px;
+        }
+
+        .tlogin {
+            color: #E8FFE0;
+            font-size: 1.8rem; /* Tamanho maior para o título */
+            margin-bottom: 1.5rem; /* Mais espaço abaixo do título */
+            font-weight: bold;
+        }
+
+        .icone_usuario {
+            width: 80px; /* Tamanho do ícone de usuário */
+            height: 80px;
+            margin: 0 auto 1.5rem auto; /* Centraliza e adiciona margem inferior */
+            display: block; /* Garante que a margem auto funcione */
+        }
+
+        form {
+            display: flex;
+            flex-direction: column; /* Organiza os elementos do formulário em coluna */
+            gap: 1rem; /* Espaçamento entre os elementos do formulário */
+        }
+
+        .inpEmail,
+        .inpSenha {
+            color: #E8FFE0;
+            font-size: 1rem;
+            text-align: left; /* Alinha o texto das labels à esquerda */
+            margin-bottom: 0.2rem; /* Pequena margem abaixo da label */
+        }
+
+        .input-field {
+            width: 100%; /* Ocupa a largura total do pai */
+            padding: 0.8rem 1rem; /* Padding interno para os campos */
+            border: 1px solid #00524C; /* Borda da cor do tema */
+            border-radius: 8px; /* Cantos arredondados */
+            background-color: rgba(255, 255, 255, 0.9); /* Fundo quase branco */
+            color: #333;
+            font-size: 1rem;
+            box-sizing: border-box; /* Inclui padding e borda na largura total */
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+
+        .input-field:focus {
+            outline: none;
+            border-color: #00C4B3; /* Borda verde claro no foco */
+            box-shadow: 0 0 0 3px rgba(0, 196, 179, 0.3); /* Sombra de foco */
+        }
+
+        .esqueci {
+            color: #E8FFE0;
+            text-decoration: underline;
+            font-size: 0.9rem;
+            margin-top: 0.5rem; /* Margem superior para o link */
+            display: block; /* Garante que seja um bloco para text-align */
+            text-align: right; /* Alinha à direita */
+            cursor: pointer;
+        }
+
+        .login_submit-btn {
+            background-color: #016458; /* Cor do botão de login */
+            border: none;
+            padding: 0.9rem 1.5rem;
+            border-radius: 8px;
+            color: white;
+            font-weight: bold;
+            font-size: 1.1rem;
+            cursor: pointer;
+            margin-top: 2rem; /* Mais margem superior */
+            transition: background-color 0.2s ease-in-out, transform 0.1s;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            width: 100%; /* Faz o botão ocupar a largura total do form */
+        }
+
+        .login_submit-btn:hover {
+            background-color: #00524C;
+            transform: translateY(-2px); /* Efeito de elevação */
+        }
+
+        #errorMessage {
+            color: #ff6347; /* Vermelho mais suave para erros */
+            font-weight: bold;
+            margin-top: 1rem;
+            text-align: center;
+            font-size: 0.95rem;
+        }
+
+        .offcadastro {
+            color: #E8FFE0;
+            text-align: center;
+            font-size: 0.95rem;
+            margin-top: 1.5rem; /* Margem para o link de cadastro */
+            display: block;
+            line-height: 1.4;
+            text-decoration: none; /* Remover sublinhado */
+            transition: color 0.2s;
+        }
+        .offcadastro:hover {
+            color: #00C4B3; /* Muda a cor no hover */
+        }
+
+        /* Estilos para o Modal "Esqueceu a Senha" */
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7); /* Fundo mais escuro */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+        }
+
+        #modal-toggle:checked ~ .modal {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal-conteudo {
+            background-color: #006B63;
+            padding: 3rem 2.5rem;
+            border-radius: 15px;
+            width: 90%;
+            max-width: 450px;
+            text-align: center;
+            color: white;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+            animation: modalSlideUp 0.3s ease-out; /* Animação de entrada */
+        }
+
+        @keyframes modalSlideUp {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .modal-conteudo h2 {
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            line-height: 1.3;
+        }
+        .modal-conteudo h2 strong {
+            color: #00C4B3; /* Cor destacada para "Sem problemas!" */
+        }
+
+        .modal-conteudo p {
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.5;
+            color: #E8FFE0;
+        }
+
+        .modal-conteudo input[type="email"] {
+            width: 90%; /* Ocupa mais largura no modal */
+            padding: 0.8rem 1rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid #00524C;
+            background-color: rgba(255, 255, 255, 0.9);
+            color: #333;
+            border-radius: 8px;
+            font-size: 1rem;
+            box-sizing: border-box;
+        }
+        .modal-conteudo input[type="email"]:focus {
+            outline: none;
+            border-color: #00C4B3;
+            box-shadow: 0 0 0 3px rgba(0, 196, 179, 0.3);
+        }
+
+        .modal-button {
+            background-color: #00A99D; /* Cor do botão do modal */
+            color: white;
+            border: none;
+            padding: 0.9rem 2rem;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            font-size: 1.1rem;
+            transition: background-color 0.2s ease-in-out, transform 0.1s;
+        }
+        .modal-button:hover {
+            background-color: #008D83;
+            transform: translateY(-2px);
+        }
+
+        .fechar {
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+            font-size: 2.5rem; /* Maior para facilitar o clique */
+            color: #00C4B3;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+        .fechar:hover {
+            color: white;
+        }
+
+        /* Estilos para o Modal "Qual tipo de usuário..." (Condicional) */
+        .checkbox-modal-condicional {
+            display: none;
+        }
+
+        .modal-condicional {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+        }
+
+        #modal-condicional-toggle:checked ~ .modal-condicional {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal-condicional-conteudo {
+            background-color: #006B63;
+            color: white;
+            border-radius: 15px;
+            padding: 3rem 2.5rem;
+            max-width: 550px; /* Maior largura máxima */
+            width: 90%;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+            animation: modalSlideUp 0.3s ease-out;
+        }
+
+        .modal-condicional-conteudo h2 {
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin-bottom: 2.5rem; /* Mais espaçamento */
+            line-height: 1.4;
+        }
+
+        .botoes-opcoes-condicional {
+            display: flex;
+            flex-direction: column; /* Botões em coluna por padrão */
+            gap: 1.5rem; /* Espaçamento entre os botões */
+            align-items: center; /* Centraliza os botões */
+        }
+
+        .btn-opcao {
+            background-color: #009688; /* Cor dos botões de opção */
+            border: none;
+            padding: 1.2rem 2rem; /* Mais padding */
+            color: white;
+            font-weight: bold;
+            border-radius: 8px;
+            box-shadow: 0 5px 0 #00796b; /* Sombra inferior para efeito 3D */
+            cursor: pointer;
+            transition: transform 0.2s, background-color 0.2s, box-shadow 0.2s;
+            font-size: 1.1rem;
+            width: 80%; /* Ocupa mais largura em telas pequenas */
+            max-width: 250px; /* Largura máxima para os botões */
+            line-height: 1.2; /* Ajuste para o texto quebrar corretamente */
+        }
+
+        .btn-opcao:hover {
+            transform: translateY(-3px); /* Efeito de elevação */
+            background-color: #00796b;
+            box-shadow: 0 8px 0 #005e56; /* Sombra mais acentuada no hover */
+        }
+
+        .fechar-modal-condicional {
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+            font-size: 2.5rem;
+            color: #00C4B3;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+        .fechar-modal-condicional:hover {
+            color: white;
+        }
+
+        /* Modal de Sucesso (apenas para consistência visual, já que o JS não é alterado) */
+        .modal-conta-sucesso {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+        }
+
+        #modal-conta-sucesso-toggle:checked ~ .modal-conta-sucesso {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal-conta-sucesso-conteudo {
+            position: relative;
+            background-color: #006B63;
+            padding: 3rem 2rem;
+            border-radius: 15px;
+            width: 90%;
+            max-width: 400px;
+            text-align: center;
+            color: white;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+            animation: modalSlideUp 0.3s ease-out;
+        }
+
+        .icone-sucesso-fundo {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0.2; /* Mais transparente */
+            width: 150px; /* Maior */
+            height: 150px;
+            background-image: url("../img/sucess.png");
+            background-size: contain;
+            background-repeat: no-repeat;
+            z-index: 1;
+        }
+
+        .modal-conta-sucesso-conteudo h2 {
+            position: relative;
+            z-index: 2;
+            margin-top: 100px; /* Ajusta a posição do texto sobre o ícone */
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #E8FFE0;
+        }
+
+        .textsucess {
+            margin-top: 0; /* Ajusta a margem, se houver */
+            font-size: 1rem;
+            color: #E8FFE0;
+            position: relative;
+            z-index: 2;
+        }
+
+        .fechar-modal-sucesso {
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+            font-size: 2.5rem;
+            color: #00C4B3;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+        .fechar-modal-sucesso:hover {
+            color: white;
+        }
+
+        /* Media Queries para Responsividade */
+        @media (min-width: 600px) {
+            .form-box {
+                padding: 3rem 3rem; /* Mais padding em telas médias */
+            }
+            .tlogin {
+                font-size: 2rem;
+            }
+            .icone_usuario {
+                width: 100px;
+                height: 100px;
+            }
+            .botoes-opcoes-condicional {
+                flex-direction: row; /* Botões de opção lado a lado */
+                justify-content: center;
+            }
+            .btn-opcao {
+                width: auto; /* Deixa a largura ser definida pelo conteúdo + padding */
+            }
+        }
+
+        @media (min-width: 900px) {
+            header {
+                padding: 2rem 0;
+            }
+            .logo {
+                max-width: 200px;
+            }
+            .form-box {
+                padding: 3.5rem 3.5rem; /* Mais padding em telas grandes */
+                max-width: 500px; /* Largura máxima maior */
+            }
+            .tlogin {
+                font-size: 2.2rem;
+            }
+            .modal-conteudo,
+            .modal-condicional-conteudo,
+            .modal-conta-sucesso-conteudo {
+                padding: 3rem;
+            }
+        }
